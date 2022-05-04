@@ -15,7 +15,7 @@ func main() {
 
 	// New servant imp
 	imp := new(WebApiImp)
-	err := imp.Init()
+	_, err := imp.Init()
 	if err != nil {
 		fmt.Printf("WebApiImp init fail, err:(%s)\n", err)
 		os.Exit(-1)
