@@ -1,0 +1,17 @@
+module ElasticSearchServiceApp
+{
+	struct Data
+	{
+		0 require string type;
+		1 require string value;
+	};
+
+	interface WebApi
+	{
+		int Update(int id, string docType, vector<Data> data); // 更新接口
+		int Insert(vector<Data> data); // 插入数据
+		int Delete(int id, string docType); // 删除数据
+		int BulkInsert(map<string, Data> data); // 批量插入
+		vector<Data> Search(map<string, string> data); // 搜索
+	};
+};
